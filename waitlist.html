@@ -220,7 +220,8 @@
       <h1>Where do you want to <span class="serif">wander?</span></h1>
       <p class="sub">We'll let you know the moment City Crumbs is ready.</p>
 
-      <form id="waitlistForm" novalidate>
+      <form id="waitlistForm" name="join-waitlist" data-netlify="true" novalidate>
+        <input type="hidden" name="form-name" value="join-waitlist" />
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
@@ -234,9 +235,9 @@
           <div class="select-wrap">
             <select id="city" name="city" required>
               <option value="" disabled selected>Pick a city</option>
-              <option value="amsterdam">Amsterdam</option>
-              <option value="tokyo">Tokyo</option>
-              <option value="hong-kong">Hong Kong</option>
+              <option value="Amsterdam">Amsterdam</option>
+              <option value="Tokyo">Tokyo</option>
+              <option value="Hong Kong">Hong Kong</option>
             </select>
           </div>
         </div>
@@ -264,8 +265,19 @@
   document.getElementById('waitlistForm').addEventListener('submit', function (e) {
     e.preventDefault();
     if (!this.checkValidity()) { this.reportValidity(); return; }
-    document.getElementById('formState').style.display = 'none';
-    document.getElementById('successState').style.display = 'block';
+    var form = this;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(function () {
+      document.getElementById('formState').style.display = 'none';
+      document.getElementById('successState').style.display = 'block';
+    })
+    .catch(function () {
+      alert('Something went wrong. Please try again.');
+    });
   });
 </script>
 </body>
