@@ -47,7 +47,7 @@
   .btn {
     display: inline-flex; align-items: center; justify-content: center;
     font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1;
-    padding: 14px 22px; border-radius: var(--r); border: 1.5px solid transparent;
+    padding: 14px 22px; border-radius: 999px; border: 1.5px solid transparent;
     cursor: pointer; transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
     white-space: nowrap; letter-spacing: -0.01em;
   }
@@ -222,6 +222,11 @@
   .socials svg { width: 18px; height: 18px; }
   .foot-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 26px 0 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--grey-3); font-size: 13px; }
 
+  /* Mobile hero CTAs — hidden on desktop */
+  .hero-ctas { display: none; }
+  /* Mobile research CTA (below phone) — hidden on desktop */
+  .research-cta-mobile { display: none; }
+
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
     .research-grid { grid-template-columns: 1fr; }
@@ -232,9 +237,21 @@
   @media (max-width: 640px) {
     .site-inner { height: 64px; }
     .logo svg { height: 22px; }
-    .nav-actions .btn--outline { display: none; }
-    .nav-actions .btn { padding: 11px 16px; font-size: 14px; }
+    /* Hide nav buttons — moved to hero */
+    .nav-actions { display: none; }
     .hero { min-height: 90vh; }
+    /* Show hero CTAs below city text */
+    .hero-ctas { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; padding: 0 var(--pad); width: 100%; }
+    .hero-ctas .btn { width: 100%; padding: 16px 20px; font-size: 16px; }
+    .hero-ctas .btn--outline-light { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.7); }
+    /* Full width Join the Waitlist in intro section */
+    .intro-cta { flex-direction: column; align-items: stretch; }
+    .intro-cta .btn { width: 100%; }
+    /* Hide desktop research CTA, show mobile one below phone */
+    .research-cta-desktop { display: none; }
+    .research-cta-mobile { display: block; margin-top: 20px; width: 100%; }
+    /* Full width form submit button */
+    form .btn { width: 100%; align-self: stretch; }
     .cards { grid-template-columns: 1fr 1fr; gap: 12px; }
     .scarcity { flex-direction: column; align-items: flex-start; }
     .foot-grid { flex-direction: column; gap: 36px; }
@@ -274,6 +291,10 @@
       <span class="bullet">&bull;</span>
     </div>
     <div class="hero-cities-static">Amsterdam &middot; Tokyo &middot; Hong Kong</div>
+    <div class="hero-ctas">
+      <a href="waitlist.html" class="btn btn--red btn--lg">Join the Waitlist</a>
+      <a href="#waitlist" class="btn btn--outline-light btn--lg">Become a Founding Crumb Dropper</a>
+    </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
 </section>
@@ -326,7 +347,7 @@
         <span class="pill">Art</span>
         <span class="pill">and more</span>
       </div>
-      <a href="waitlist.html" class="btn btn--red btn--lg btn--wide" style="margin-top: 30px;">Join the Waitlist</a>
+      <a href="waitlist.html" class="btn btn--red btn--lg btn--wide research-cta-desktop" style="margin-top: 30px;">Join the Waitlist</a>
     </div>
 
     <div>
@@ -355,6 +376,7 @@
           <button class="ph-start" type="button">Start walk</button>
         </div>
       </div>
+      <a href="waitlist.html" class="btn btn--red btn--lg research-cta-mobile">Join the Waitlist</a>
     </div>
   </div>
 </section>
