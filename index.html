@@ -200,6 +200,10 @@
   }
   .field input::placeholder { color: var(--grey-3); }
   .field input:focus { outline: none; border-bottom-color: var(--red); }
+  .field select { width: 100%; font-family: inherit; font-size: clamp(18px, 1.8vw, 22px); color: var(--ink); padding: 12px 2px; border: none; border-bottom: 1.5px solid var(--line); border-radius: 0; background: transparent; transition: border-color .15s ease; appearance: none; -webkit-appearance: none; }
+  .field select:focus { outline: none; border-bottom-color: var(--red); }
+  .select-wrap { position: relative; }
+  .select-wrap::after { content: ''; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 10px; height: 6px; background: var(--grey-2); clip-path: polygon(0 0, 100% 0, 50% 100%); pointer-events: none; }
   form .btn { align-self: flex-start; margin-top: 6px; }
   .form-thanks { display: none; margin-top: 22px; padding: 18px 22px; border-radius: var(--r); background: var(--lime); color: var(--brown); font-weight: 600; }
 
@@ -396,6 +400,17 @@
       <div class="field">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="you@city.com" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="city">Your city</label>
+        <div class="select-wrap">
+          <select id="city" name="city" required>
+            <option value="" disabled selected>Pick a city</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Tokyo">Tokyo</option>
+          </select>
+        </div>
       </div>
       <div class="field">
         <label for="link">A showcase of your city knowledge</label>
