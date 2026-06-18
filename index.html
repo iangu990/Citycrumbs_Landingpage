@@ -128,7 +128,7 @@
   }
   .card { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 3 / 4; background: var(--grey-3); }
   .card img { width: 100%; height: 100%; object-fit: cover; }
-  .card .shade { position: absolute; inset: 0; background: var(--red); opacity: 0; transition: opacity .3s ease; }
+  .card .shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%); opacity: 0; transition: opacity .3s ease; }
   .card .cap { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; padding: 22px; color: var(--white); font-weight: 600; font-size: clamp(17px, 1.4vw, 21px); letter-spacing: -0.01em; line-height: 1.22; opacity: 0; transform: translateY(8px); transition: opacity .3s ease, transform .3s ease; }
   .card:hover .shade { opacity: .94; }
   .card:hover .cap { opacity: 1; transform: none; }
@@ -174,7 +174,7 @@
   .founding .cities { margin-top: 18px; color: rgba(255,255,255,0.55); font-size: clamp(14px, 1.3vw, 17px); font-weight: 400; letter-spacing: 0; }
   .two-col { margin-top: clamp(54px, 7vw, 92px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); }
   .col-head { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding-bottom: 22px; margin-bottom: 8px; }
-  .col li { list-style: none; display: flex; gap: 18px; padding: 20px 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 400; line-height: 1.45; letter-spacing: -0.01em; color: rgba(255,255,255,0.88); }
+  .col li { list-style: none; display: flex; gap: 18px; padding: 14px 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 400; line-height: 1.45; letter-spacing: -0.01em; color: rgba(255,255,255,0.88); }
   .col li .mark { color: rgba(255,255,255,0.5); flex: none; font-weight: 400; margin-top: 1px; }
   .col li b { font-weight: 700; color: var(--white); }
   .scarcity {
@@ -247,14 +247,29 @@
     /* Full width Join the Waitlist in intro section */
     .intro-cta { flex-direction: column; align-items: stretch; }
     .intro-cta .btn { width: 100%; }
-    /* Hide desktop research CTA, show mobile one below phone */
+    /* Hide desktop research CTA, show mobile one centered below phone */
     .research-cta-desktop { display: none; }
-    .research-cta-mobile { display: block; margin-top: 20px; width: 100%; }
+    .research-cta-mobile { display: block; margin-top: 20px; width: 100%; text-align: center; }
     /* Full width form submit button */
     form .btn { width: 100%; align-self: stretch; }
     .cards { grid-template-columns: 1fr 1fr; gap: 12px; }
     .scarcity { flex-direction: column; align-items: flex-start; }
     .foot-grid { flex-direction: column; gap: 36px; }
+    /* 1. Tighter gap between intro CTA and research section */
+    #how { padding-bottom: 40px; }
+    .research { padding-top: 40px; }
+    /* 3. Tighter spacing between founding list items */
+    .col li { padding: 6px 0; }
+    /* 4. Always-visible photo captions, no hover state */
+    .card .shade { opacity: 0.7; }
+    .card .cap { opacity: 1; transform: none; }
+    .card:hover .shade { opacity: 0.7; }
+    /* 5. Fixed header: visible at top, hides on scroll down, shows on scroll up */
+    body { padding-top: 64px; }
+    header.site { position: fixed; width: 100%; transition: transform 0.3s ease; }
+    header.site.nav-hidden { transform: translateY(-100%); }
+    /* 6. Hide rotating city name in hero */
+    .hero-city { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .city-name { transition: none; }
@@ -395,7 +410,7 @@
       </ul>
       <ul class="col">
         <li class="col-head" style="display:block">What you get</li>
-        <li><span class="mark">—</span><span>Earn <b>70% revenue share</b> + tips on every walk (drops to 50% after launch).</span></li>
+        <li><span class="mark">—</span><span>Earn <b>exclusive revenue share</b> + tips on every walk.</span></li>
         <li><span class="mark">—</span><span>Upload once. Earn ongoing. No need to show up.</span></li>
         <li><span class="mark">—</span><span>Your route stays exclusive to paying travellers.</span></li>
       </ul>
@@ -514,6 +529,23 @@
       i = (i + 1) % slides.length;
       show(i, true);
     }, 6000);
+  })();
+
+  // ---- Mobile header: hide on scroll down, show on scroll up ----
+  (function() {
+    var header = document.querySelector('header.site');
+    var lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      var current = window.pageYOffset;
+      if (current <= 0) {
+        header.classList.remove('nav-hidden');
+      } else if (current > lastScroll && current > 64) {
+        header.classList.add('nav-hidden');
+      } else if (current < lastScroll) {
+        header.classList.remove('nav-hidden');
+      }
+      lastScroll = current;
+    }, { passive: true });
   })();
 
   // ---- Form submit ----
