@@ -201,6 +201,8 @@
   @media (max-width: 640px) {
     header { padding: 20px var(--pad); }
   }
+  footer .legal-links { display: flex; gap: 20px; }
+  footer a:hover { color: var(--red); }
 </style>
 </head>
 <body>
@@ -259,7 +261,7 @@
 
 <footer>
   <span>© 2026 Localogs</span>
-  <span>Made for wanderers, by locals.</span>
+  <span class="legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></span>
 </footer>
 
 <script>

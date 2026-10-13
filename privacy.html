@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Localogs</title>
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --red: #EA4726;
+    --brown: #501100;
+    --white: #FFFFFF;
+    --lime: #EFFDC7;
+    --ink: #000000;
+    --grey-1: #353535;
+    --grey-2: #787878;
+    --grey-3: #BCBCBC;
+    --line: #ECECEC;
+    --r: 12px;
+    --pad: clamp(20px, 5vw, 88px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .serif { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Header (same as homepage) ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+    padding-left: clamp(16px, 2.5vw, 32px);
+    padding-right: clamp(16px, 2.5vw, 32px);
+  }
+  .site-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px; max-width: 1280px; margin: 0 auto; width: 100%; }
+  .logo { display: flex; align-items: center; color: var(--red); }
+  .logo img { height: 44px; width: auto; display: block; }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1;
+    padding: 14px 22px; border-radius: 999px; border: 1.5px solid transparent;
+    cursor: pointer; transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+    white-space: nowrap; letter-spacing: -0.01em;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn--red { background: var(--red); color: var(--white); }
+  .btn--red:hover { background: #d63c1d; }
+  .btn--outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--outline:hover { background: var(--ink); color: var(--white); }
+  @media (max-width: 640px) {
+    .site-inner { height: 64px; }
+    .logo img { height: 31px; }
+    .nav-actions { display: none; }
+  }
+
+  /* ---------- Legal page ---------- */
+  main { flex: 1; padding: clamp(48px, 8vw, 96px) var(--pad); }
+  .doc { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+  .meta { margin-top: 16px; color: var(--grey-2); font-size: 15px; }
+  .doc h2 { margin-top: 44px; font-size: 24px; letter-spacing: -0.02em; line-height: 1.2; }
+  .doc h3 { margin-top: 28px; font-size: 18px; letter-spacing: -0.01em; }
+  .doc h4 { margin-top: 20px; font-size: 16px; color: var(--grey-1); }
+  .doc p { margin-top: 14px; font-size: 16px; line-height: 1.65; color: var(--grey-1); }
+  .doc p.meta { margin-top: 16px; font-size: 15px; color: var(--grey-2); }
+  .doc ul { margin-top: 12px; padding-left: 22px; color: var(--grey-1); }
+  .doc li { margin-top: 8px; font-size: 16px; line-height: 1.6; }
+  .doc strong { color: var(--ink); }
+  .doc a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+  .tbl { margin-top: 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); line-height: 1.5; }
+  th { background: var(--lime); color: var(--brown); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  footer {
+    padding: 24px var(--pad); border-top: 1px solid var(--line); color: var(--grey-3);
+    font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  footer .legal-links { display: flex; gap: 20px; }
+  footer a:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-inner">
+    <a href="index.html" class="logo" aria-label="Localogs — back to home">
+      <img src="assets/logo-localogs.png" alt="Localogs" />
+    </a>
+    <div class="nav-actions">
+      <a href="index.html#waitlist" class="btn btn--outline">Become a Founding Local Creator</a>
+      <a href="waitlist.html" class="btn btn--red">Join the Waitlist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="doc">
+<h1>Privacy Policy</h1>
+<p class="meta">Effective date: 2026-10-10 · Last updated: 2026-10-10</p>
+<h2>1. Who We Are</h2>
+<p>Localogs is a travel app that allows users to discover and follow locally curated city walks.</p>
+<p>The data controller responsible for processing your personal data is:</p>
+<ul>
+<li>Legal name: Localogs</li>
+<li>Privacy contact: <a href="mailto:info@localogs.com">info@localogs.com</a></li>
+</ul>
+<p>In this Privacy Policy, “Localogs”, “we”, “us” and “our” refer to the business operating the Localogs app.</p>
+<p>This Privacy Policy explains what personal data we process, why we process it, who we share it with, how long we retain it, and how you can exercise your privacy rights.</p>
+<h2>2. What Personal Data We Process</h2>
+<h3>2.1 Account and Authentication Data</h3>
+<p>When you create and use a Localogs account, we process the information needed to register your account and provide access to the Service. This may include your name, email address, account identifier, authentication information and profile photo, where provided.</p>
+<p>We use Supabase for authentication and account-related services.</p>
+<p>We do not need to store your password in readable form. Authentication credentials are handled through the authentication system used by Localogs.</p>
+<h3>2.2 Location Data and Navigation</h3>
+<p>Localogs uses your device’s location to provide navigation during a Walk, display your position on the map, and detect when you arrive within the designated radius of a stop.</p>
+<h4>Local processing by Localogs</h4>
+<p>Your live GPS coordinates are processed locally on your device. Localogs does not upload or store your live GPS coordinates on its own servers.</p>
+<p>Arrival detection is performed on your device using a distance calculation. Localogs does not record your GPS route history, the locations you visit during a Walk, or the time you arrive at each stop.</p>
+<h4>Mapbox telemetry</h4>
+<p>Localogs uses the Mapbox Maps SDK to display maps and your position. The SDK’s telemetry is currently enabled using its default configuration. When the SDK gathers location information, it may transmit de-identified location and usage telemetry to Mapbox.</p>
+<p>Although Mapbox describes this telemetry as de-identified, it is distinct from Localogs’ own server-side processing of location data. Mapbox may also process technical information, such as IP addresses, in connection with its services.</p>
+<p>Mapbox processes data in accordance with its applicable privacy information: <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">Mapbox Privacy Policy</a>.</p>
+<h4>Directions, geocoding and search</h4>
+<p>When displaying walking routes, Localogs sends the coordinates of designated stops to the Mapbox Directions API to calculate a route between those stops. These are route coordinates, not your live GPS coordinates.</p>
+<p>Localogs also uses Mapbox Geocoding and Search Box APIs to help creators search for and identify locations when creating Walks. Information submitted to these services may be processed by Mapbox in accordance with its applicable terms and privacy information.</p>
+<p>You can manage the app’s access to your device location through your device settings. Disabling location access may prevent certain navigation features from working.</p>
+<h3>2.3 Walk Completion Records</h3>
+<p>When you complete a Walk, Localogs records the completion in the walk_completions database table.</p>
+<p>Each record contains:</p>
+<ul>
+<li>Your internal user ID.</li>
+<li>The ID of the completed Walk.</li>
+<li>The completion timestamp.</li>
+<li>An automatically generated record ID.</li>
+</ul>
+<p>Only one completion record is kept for the same user and Walk.</p>
+<p>These records do not contain your GPS coordinates, movement history, individual stop locations or arrival timestamps.</p>
+<p>Access to these records is restricted through database row-level security (RLS), so users can access only their own records through the relevant user-facing functionality.</p>
+<p>We use Walk completion records to:</p>
+<ul>
+<li>Record completion of a Walk and support relevant app features.</li>
+<li>Calculate route completion statistics and assess the popularity of individual Walks.</li>
+<li>Calculate and reconcile creators’ revenue shares where these depend on Walk activity.</li>
+<li>Prevent duplicate reviews, reward claims or other abuse of applicable review and reward rules.</li>
+</ul>
+<p>Where relevant, creators may receive aggregated or route-level completion statistics and information needed to calculate their revenue share. We do not provide creators with your live GPS coordinates or GPS route histories.</p>
+<p>Walk completion records can remain personal data while they are linked to an identifiable user. We therefore apply the retention rules described in Section 6.</p>
+<h3>2.4 Purchases and Payment Information</h3>
+<p>When you purchase a Walk, Localogs processes information needed to record and manage the transaction. This may include:</p>
+<ul>
+<li>Walks purchased.</li>
+<li>Order or transaction identifiers.</li>
+<li>Purchase date and amount.</li>
+<li>Payment status and refund information.</li>
+<li>VAT and relevant accounting records.</li>
+</ul>
+<p>Stripe processes payment information for transactions using Stripe. Localogs does not store full payment card details on its own servers, provided the payment integration continues to operate as configured.</p>
+<p>Stripe may process certain information in its own capacity as a data controller, in addition to processing data on behalf of Localogs. Its applicable privacy information is available at <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe Privacy Policy</a>.</p>
+<p>We retain the purchase and accounting information necessary to administer transactions, process refunds, resolve disputes and meet applicable legal obligations.</p>
+<h3>2.5 Reviews and Uploaded Photos</h3>
+<p>When you submit a review or upload a photo in connection with a Walk, we process that content to provide the relevant review and community features.</p>
+<p>Photos uploaded through Localogs do not retain the original EXIF metadata, according to our current implementation.</p>
+<p>We store relevant content using Supabase’s database and storage services. Reviews and uploaded photos are deleted when you delete your account, subject to the deletion process described in Section 6.</p>
+<h3>2.6 Device and Diagnostic Information</h3>
+<p>Localogs may use limited technical information, such as app version, operating system information and diagnostic or crash information, to understand and address technical issues.</p>
+<p>Our current implementation stores the relevant diagnostic information locally on the device for up to 30 days rather than transmitting it to Localogs’ servers.</p>
+<p>If this implementation changes, we will update this Privacy Policy to accurately describe any additional information collected, how it is used and how long it is retained.</p>
+<h3>2.7 Information We Do Not Collect for Our Own Navigation</h3>
+<p>Localogs does not upload live GPS coordinates to its own servers and does not maintain a GPS route history of your Walks.</p>
+<p>We do not use advertising identifiers or process your personal data for targeted advertising.</p>
+<p>We do not currently use third-party analytics SDKs, according to our current implementation.</p>
+<p>These statements do not mean that third-party providers, including Mapbox, cannot process technical information or telemetry as described above.</p>
+<h2>3. Why We Process Your Data and Our Legal Bases</h2>
+<p>We process personal data only where we have a lawful basis under applicable data protection law.</p>
+<div class="tbl"><table><thead><tr><th>Purpose</th><th>Relevant data</th><th>Legal basis</th></tr></thead><tbody>
+<tr><td>Create and maintain your account</td><td>Account and authentication data</td><td>Performance of our contract with you, where necessary</td></tr>
+<tr><td>Provide Walk navigation</td><td>Device location processed locally and related service requests</td><td>Performance of our contract where processing is necessary to provide the requested feature</td></tr>
+<tr><td>Record Walk completion and provide relevant features</td><td>User ID, Walk ID and completion timestamp</td><td>Performance of our contract, where necessary</td></tr>
+<tr><td>Calculate creator revenue shares</td><td>Walk completion records and relevant route statistics and transaction information</td><td>Our legitimate interests in accurate settlement and operating the creator marketplace, where applicable and following an appropriate balancing assessment; contractual necessity where applicable</td></tr>
+<tr><td>Prevent duplicate reviews, rewards and abuse</td><td>Relevant account, completion and reward records</td><td>Our legitimate interests in protecting service integrity and preventing abuse, subject to an appropriate balancing assessment</td></tr>
+<tr><td>Process purchases, refunds and payments</td><td>Purchase, payment and accounting records</td><td>Performance of our contract and compliance with legal obligations, as applicable</td></tr>
+<tr><td>Publish and manage user reviews</td><td>Reviews and uploaded photos</td><td>Performance of our contract and the applicable arrangements governing submission and display of content</td></tr>
+<tr><td>Diagnose technical issues</td><td>Limited device and diagnostic information</td><td>As applicable to the actual processing and its purpose</td></tr>
+</tbody></table></div>
+<p><strong>Mapbox telemetry:</strong> Mapbox telemetry is enabled by default in our current implementation. Mapbox’s processing is subject to its applicable privacy terms.</p>
+<p>Where we rely on legitimate interests, we consider those interests against your rights and freedoms. You may object to processing based on legitimate interests as explained in Section 7.</p>
+<h2>4. Who We Share Personal Data With</h2>
+<p>We share personal data only where necessary for the purposes described in this Privacy Policy, or where required or permitted by law.</p>
+<h3>Supabase</h3>
+<p>Supabase provides authentication, database and storage services used by Localogs. These services support account management, Walk completion records, reviews and uploaded photos.</p>
+<p>The location of your Supabase project determines where its primary database, authentication data and storage objects are hosted. The actual project region and relevant provider processing locations should be reflected in our internal data-processing records.</p>
+<h3>Stripe</h3>
+<p>Stripe processes payment information and related transactions when Stripe is used for a purchase. Depending on the processing activity, Stripe may act as a processor or an independent controller.</p>
+<h3>Mapbox</h3>
+<p>Mapbox provides map display, Directions, Geocoding and Search Box services. The mobile Maps SDK may also transmit location and usage telemetry as described in Section 2.2.</p>
+<h3>Walk Creators</h3>
+<p>Where necessary, we share route-level statistics and the information required to calculate or reconcile a creator’s revenue share. We do not share travellers’ live GPS coordinates or GPS route histories with creators.</p>
+<h3>Apple and Google</h3>
+<p>Apple or Google may process information where their sign-in, app distribution or payment services are used, as applicable to the features available in Localogs.</p>
+<h3>Legal Requirements and Protection of Rights</h3>
+<p>We may disclose relevant information where necessary to comply with applicable law, respond to lawful requests, establish or defend legal claims, or protect the rights, safety and security of users and Localogs.</p>
+<p>We do not sell your personal data or share it for targeted advertising.</p>
+<h2>5. International Data Transfers</h2>
+<p>Some of our service providers may process personal data outside the European Economic Area (EEA), depending on the provider, the service used and its configuration.</p>
+<p>Where a transfer is subject to the GDPR’s international transfer requirements, we use an applicable lawful transfer mechanism, such as an adequacy decision or Standard Contractual Clauses, together with supplementary measures where required.</p>
+<p>You may contact us at <a href="mailto:info@localogs.com">info@localogs.com</a> for further information about the safeguards applicable to relevant transfers.</p>
+<h2>6. How Long We Keep Your Data</h2>
+<p>We retain personal data only for as long as necessary for the purposes described in this Privacy Policy or for as long as required by applicable law.</p>
+<h3>Account Deletion</h3>
+<p>You can delete your Localogs account through the account deletion option in the app. When you delete your account, we will delete your account credentials, reviews, uploaded photos and other personal data within 60 days of the deletion request being confirmed.</p>
+<h3>Purchase and accounting records</h3>
+<p>We may retain limited purchase, payment, refund and accounting records for the period required by applicable law. Under Dutch tax rules, ordinary business accounting records generally have a seven-year retention period; certain transactions covered by the EU One Stop Shop (OSS) VAT scheme are subject to a ten-year retention period. The applicable period depends on the records and the tax rules relevant to the transaction.</p>
+<p>We will not retain unrelated account data merely because accounting records must be preserved.</p>
+<p>When a retention period expires, relevant personal data will be securely deleted or irreversibly anonymised, as appropriate.</p>
+<h2>7. Your Privacy Rights</h2>
+<p>Subject to the conditions and limitations under applicable law, you may have the right to:</p>
+<ul>
+<li>Access your personal data and obtain a copy.</li>
+<li>Rectify inaccurate or incomplete personal data.</li>
+<li>Erase personal data where the legal requirements for deletion are met.</li>
+<li>Restrict the processing of your personal data in certain circumstances.</li>
+<li>Data portability for qualifying personal data processed on the applicable legal bases.</li>
+<li>Object to processing based on legitimate interests, including where applicable processing for service integrity or abuse prevention.</li>
+<li>Withdraw consent at any time where processing is based on consent.</li>
+</ul>
+<p>Withdrawing consent does not affect the lawfulness of processing carried out before withdrawal.</p>
+<p>To exercise your rights, contact <a href="mailto:info@localogs.com">info@localogs.com</a>. We may need to verify your identity before responding.</p>
+<p>We will respond without undue delay and generally within one month. Where permitted by law, this period may be extended by a further two months for complex or numerous requests. If an extension is necessary, we will inform you within the initial month and explain why.</p>
+<p>You also have the right to lodge a complaint with the competent data protection supervisory authority. In the Netherlands, this is the Autoriteit Persoonsgegevens: <a href="https://autoriteitpersoonsgegevens.nl/en" target="_blank" rel="noopener">https://autoriteitpersoonsgegevens.nl/en</a></p>
+<h2>8. Security</h2>
+<p>We take appropriate technical and organisational measures to protect personal data against unauthorised access, loss, alteration and disclosure.</p>
+<p>Depending on the service and system concerned, these measures include access controls, restricted administrative access, security protections provided by our service providers and encrypted transmission where supported.</p>
+<p>Supabase provides the authentication, database and storage infrastructure used by Localogs. Access to Walk completion records is subject to row-level security policies in our database.</p>
+<p>Payment card information is processed through the applicable payment provider. Localogs does not store full payment card details on its own servers, provided the payment integration continues to operate as configured.</p>
+<p>No method of transmission or storage is completely secure. We review our safeguards in light of the data processed and the risks involved.</p>
+<h2>9. Cookies, Analytics and Tracking</h2>
+<p>The Localogs mobile app does not use advertising identifiers or targeted advertising trackers, according to our current implementation.</p>
+<p>We do not currently use third-party analytics SDKs for advertising or user profiling. However, Mapbox telemetry is enabled by default and may transmit location and usage telemetry to Mapbox. This is described in Section 2.2 and is distinct from advertising tracking.</p>
+<p>If Localogs introduces a website or additional services that use cookies or similar technologies, we will provide any applicable cookie information and consent controls required by law.</p>
+<h2>10. Children and Minors</h2>
+<p>Localogs is intended for users aged 18 and over. Individuals under 18 are not permitted to create or use a Localogs account, including through another person’s account.</p>
+<p>If we become aware that an account has been created or used in breach of this rule, we will take appropriate steps in accordance with applicable law.</p>
+<h2>11. Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy to reflect changes to Localogs, our data processing activities or applicable legal requirements.</p>
+<p>We will publish the updated version in the app or on our website and revise the effective date. Where appropriate, we will notify users of material changes.</p>
+<p>Where applicable law requires new or renewed consent for a change in processing, we will obtain that consent before carrying out the relevant processing.</p>
+<h2>12. Contact Us</h2>
+<p>If you have questions about this Privacy Policy or wish to exercise your privacy rights, contact:</p>
+<p><strong>Localogs Privacy Contact</strong></p>
+<p>Email: <a href="mailto:<a href="mailto:info@localogs.com">info@localogs.com</a>">info@localogs.com</a></p>
+  </article>
+</main>
+
+<footer>
+  <span>© 2026 Localogs</span>
+  <span class="legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></span>
+</footer>
+</body>
+</html>

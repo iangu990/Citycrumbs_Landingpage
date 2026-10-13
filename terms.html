@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Localogs</title>
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --red: #EA4726;
+    --brown: #501100;
+    --white: #FFFFFF;
+    --lime: #EFFDC7;
+    --ink: #000000;
+    --grey-1: #353535;
+    --grey-2: #787878;
+    --grey-3: #BCBCBC;
+    --line: #ECECEC;
+    --r: 12px;
+    --pad: clamp(20px, 5vw, 88px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .serif { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Header (same as homepage) ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+    padding-left: clamp(16px, 2.5vw, 32px);
+    padding-right: clamp(16px, 2.5vw, 32px);
+  }
+  .site-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px; max-width: 1280px; margin: 0 auto; width: 100%; }
+  .logo { display: flex; align-items: center; color: var(--red); }
+  .logo img { height: 44px; width: auto; display: block; }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1;
+    padding: 14px 22px; border-radius: 999px; border: 1.5px solid transparent;
+    cursor: pointer; transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+    white-space: nowrap; letter-spacing: -0.01em;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn--red { background: var(--red); color: var(--white); }
+  .btn--red:hover { background: #d63c1d; }
+  .btn--outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn--outline:hover { background: var(--ink); color: var(--white); }
+  @media (max-width: 640px) {
+    .site-inner { height: 64px; }
+    .logo img { height: 31px; }
+    .nav-actions { display: none; }
+  }
+
+  /* ---------- Legal page ---------- */
+  main { flex: 1; padding: clamp(48px, 8vw, 96px) var(--pad); }
+  .doc { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+  .meta { margin-top: 16px; color: var(--grey-2); font-size: 15px; }
+  .doc h2 { margin-top: 44px; font-size: 24px; letter-spacing: -0.02em; line-height: 1.2; }
+  .doc h3 { margin-top: 28px; font-size: 18px; letter-spacing: -0.01em; }
+  .doc h4 { margin-top: 20px; font-size: 16px; color: var(--grey-1); }
+  .doc p { margin-top: 14px; font-size: 16px; line-height: 1.65; color: var(--grey-1); }
+  .doc p.meta { margin-top: 16px; font-size: 15px; color: var(--grey-2); }
+  .doc ul { margin-top: 12px; padding-left: 22px; color: var(--grey-1); }
+  .doc li { margin-top: 8px; font-size: 16px; line-height: 1.6; }
+  .doc strong { color: var(--ink); }
+  .doc a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+  .tbl { margin-top: 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); line-height: 1.5; }
+  th { background: var(--lime); color: var(--brown); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  footer {
+    padding: 24px var(--pad); border-top: 1px solid var(--line); color: var(--grey-3);
+    font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  footer .legal-links { display: flex; gap: 20px; }
+  footer a:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-inner">
+    <a href="index.html" class="logo" aria-label="Localogs — back to home">
+      <img src="assets/logo-localogs.png" alt="Localogs" />
+    </a>
+    <div class="nav-actions">
+      <a href="index.html#waitlist" class="btn btn--outline">Become a Founding Local Creator</a>
+      <a href="waitlist.html" class="btn btn--red">Join the Waitlist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="doc">
+<h1>Terms of Service</h1>
+<p class="meta">User Terms &amp; Conditions · Last updated: 10 October 2026</p>
+<h2>1. Who We Are &amp; These Terms</h2>
+<p>These Terms &amp; Conditions (“Terms”) are a legal agreement between you and Localogs, a sole proprietorship (eenmanszaak) registered in the Netherlands (“we”, “us”, “our”).</p>
+<p>These Terms govern your access to and use of the Localogs mobile application, website, and related services (together, the “Service”) as a user. By creating an account, purchasing a Route, or otherwise using the Service, you agree to these Terms.</p>
+<p>The following documents form part of your agreement with us and are incorporated by reference:</p>
+<ul>
+<li>our <a href="privacy.html">Privacy Policy</a>, which explains how we handle your personal data, including location data;</li>
+<li>our Content Policy, which sets the rules for content on the Service, including reviews;</li>
+<li>the Regional Terms in the Annex to these Terms, which apply based on where you live and prevail over the main body of these Terms in case of conflict.</li>
+</ul>
+<p>If you do not agree to these Terms, please do not use the Service.</p>
+<h2>2. Definitions</h2>
+<ul>
+<li>“Creator” means an independent individual who creates and submits Routes for sale on the Service.</li>
+<li>“Route” means a GPS-guided self-guided walking route, including its Stops, descriptions, photographs, and other associated content, created by a Creator and made available for purchase on the Service.</li>
+<li>“Stop” means an individual point of interest within a Route.</li>
+<li>“Walk” means your use of a purchased Route in the physical world.</li>
+<li>“Content” means all text, photographs, maps, audio, and other material available on the Service, whether provided by us, by Creators, or by users.</li>
+</ul>
+<h2>3. Eligibility &amp; Your Account</h2>
+<p><strong>3.1 Age.</strong> You must be at least 18 years old to create an account and use the Service. By creating an account, you confirm that you are 18 or older.</p>
+<p><strong>3.2 Minors accompanying you.</strong> Routes may only be purchased and followed by account holders. If a minor accompanies you on a Walk, you confirm that you are legally authorised to act on behalf of that minor, and you are solely responsible for their supervision and safety at all times during the Walk. To the maximum extent permitted by applicable law, we accept no responsibility for minors accompanying you.</p>
+<p><strong>3.3 Account information.</strong> You agree to provide accurate information when creating your account and to keep it up to date. You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately at <a href="mailto:info@localogs.com">info@localogs.com</a> if you suspect unauthorised use of your account.</p>
+<p><strong>3.4 One person, one account.</strong> Your account is personal to you and may not be shared, sold, or transferred.</p>
+<h2>4. Our Service</h2>
+<p><strong>4.1 What Localogs is.</strong> Localogs is a platform where independent Creators publish self-guided walking Routes of their cities, and travellers purchase and follow those Routes. When you purchase a Route, you purchase it from Localogs. Creators license their content to us; your contract for the purchase is with us.</p>
+<p><strong>4.2 What Localogs is not.</strong> We are not a travel agency, tour operator, or guide service. Routes are self-guided: no Creator, employee, or agent of Localogs accompanies you, supervises you, or monitors your Walk. We do not provide emergency assistance, real-time monitoring, or rescue services.</p>
+<p><strong>4.3 About our review of Routes.</strong> We review Routes before publication for quality and compliance with our Content Policy. This review is an editorial quality check performed remotely. Our review is limited to editorial and policy compliance and does not constitute verification of the physical route, businesses, locations, accessibility, safety, or current operating conditions. It is not a physical inspection of the route, a safety audit, or a guarantee that the conditions described in a Route are current, accurate, or safe at the time of your Walk. Cities change constantly: businesses close, streets are altered, construction appears, and neighbourhoods change character by hour and season. Content reflects the Creator’s knowledge at the time of creation and our review at the time of publication — not the conditions you will encounter.</p>
+<p><strong>4.4 Relationship with Creators.</strong> Creators are independent third parties. They are not employees, agents, partners, or representatives of Localogs, and nothing in these Terms creates an employment, agency, joint venture, or partnership relationship between Localogs and any Creator. While we sell Routes to you as described in Section 4.1 and review Routes before publication, a Creator’s descriptions, recommendations, and opinions within a Route are the Creator’s own and are not made on our behalf or under our direction.</p>
+<p><strong>4.5 Routes removed from sale.</strong> A Creator may delete their account, or we may take a Route down from sale. When a Route is taken down it is no longer shown to or available for purchase by new users. If you purchased the Route before it was taken down, you keep access to it under Section 7.1 and may continue to follow it, unless we must disable access because the Route is unlawful or presents a safety risk, or as otherwise required by law. If a Creator has deleted their account, their name and profile are replaced on their Routes with “Deactivated user”.</p>
+<h2>5. Purchases &amp; Payment</h2>
+<p><strong>5.1 Seller.</strong> Localogs is the seller of all Routes purchased through the Service.</p>
+<p><strong>5.2 Prices.</strong> Prices are displayed in the app before purchase and include applicable VAT or other consumption taxes unless stated otherwise. We may change prices at any time; changes do not affect purchases you have already completed.</p>
+<p><strong>5.3 Payment methods.</strong> Purchases are processed through our own payment provider. We do not sell Routes through Apple App Store or Google Play in-app purchase billing; billing for all Routes is handled directly by us, not by Apple or Google.</p>
+<p><strong>5.4 EU/EEA consumers — right of withdrawal and its waiver.</strong> If you are a consumer in the EU/EEA, you normally have a statutory right to withdraw from a distance purchase within 14 days. Routes are digital content supplied without a tangible medium. During checkout, you will be asked to expressly consent to immediate supply of the Route and to acknowledge that you thereby lose your right of withdrawal. Your purchase will only complete once you have given this consent and acknowledgment. Full statutory information is set out in Annex A (EU Regional Terms).</p>
+<p><strong>5.5 Purchase confirmation.</strong> After a completed purchase, the Route is unlocked in your account and a confirmation is provided. Access to purchased Routes requires an active account and a compatible device; certain features (including GPS navigation) require location services, mobile data, and adequate GPS signal, which we do not control.</p>
+<p><strong>5.6 Devices, connectivity &amp; costs.</strong> You are responsible for supplying and maintaining a compatible device, a working internet or mobile data connection, a sufficiently charged battery, and any other equipment needed to use the Service. GPS navigation and location features can be power-intensive; using them continuously during a Walk will consume battery faster than typical app use, and we recommend starting your Walk with a sufficiently charged device. We do not control, and are not responsible for, the availability or quality of your mobile network, Wi-Fi, or GPS signal. If you use the Service while roaming outside your home country — which will often be the case, since Routes are designed for travellers — your mobile operator’s data and roaming charges apply and may be significantly higher than at home; check your operator’s international rates before your Walk, or download what you need while on Wi-Fi.</p>
+<h2>6. Refunds</h2>
+<p><strong>6.1 No change-of-mind refunds.</strong> Because a Route’s full content is available to you immediately upon purchase, purchases are non-refundable except as described in this Section 6 or as required by applicable law.</p>
+<p><strong>6.2 Quality and conformity issues.</strong> If you believe that a Route does not conform to the contract, including because it materially differs from its description or does not meet applicable statutory requirements for digital content, please contact us at <a href="mailto:info@localogs.com">info@localogs.com</a> and describe the issue.</p>
+<p>We will assess your request in accordance with applicable consumer law. Depending on the circumstances, you may be entitled to a repair, replacement, price reduction, termination of the contract, refund, or another statutory remedy. Any additional refund, credit, or other remedy that we voluntarily provide beyond your statutory rights is offered at our discretion and does not create an obligation or precedent for future requests.</p>
+<p><strong>6.3 Statutory rights.</strong> Nothing in this Section 6 limits any non-waivable rights or remedies you have under the mandatory consumer protection laws of your country of residence, including statutory conformity guarantees for digital content under EU law.</p>
+<h2>7. Your Licence to Content</h2>
+<p><strong>7.1 What you get.</strong> When you purchase a Route, we grant you a personal, non-exclusive, non-transferable licence to access and use that Route through the Service for your own private, non-commercial use, subject to these Terms.</p>
+<p><strong>7.2 What you may not do.</strong> You may not:</p>
+<ul>
+<li>(a) copy, reproduce, distribute, publish, or publicly share a Route or any substantial part of its content (including by screenshots of Stop descriptions shared beyond personal use);</li>
+<li>(b) resell, sublicense, rent, or otherwise commercialise any Route or Content;</li>
+<li>(c) use any Route to conduct guided tours or other organised group activities, whether paid or unpaid, or for any other commercial activity;</li>
+<li>(d) scrape, harvest, or extract Content or data from the Service by any automated means;</li>
+<li>(e) remove or alter any attribution, watermark, or proprietary notice.</li>
+</ul>
+<p><strong>7.3 Consequences of misuse.</strong> If you breach this Section 7, we may take one or more of the following actions, proportionate to the seriousness of the breach:</p>
+<ul>
+<li>(a) issue you a warning and require that the infringing use stop;</li>
+<li>(b) where you have materially breached this Section 7, suspend or terminate your licence to the affected Route(s) and disable your access to them, subject to applicable law (any refund entitlement you have under mandatory law is unaffected);</li>
+<li>(c) suspend or terminate your account in accordance with Section 17.2;</li>
+<li>(d) remove or disable any content you have published in breach of this Section, and request its takedown from third-party platforms;</li>
+<li>(e) where the breach is commercial in nature (including reselling Routes or using them to conduct paid tours), demand that you account for and pay over the profits derived from the breach; and</li>
+<li>(f) pursue any other remedy available to us at law, including claims for damages and injunctive relief to stop ongoing or threatened infringement.</li>
+</ul>
+<p>These actions are cumulative: taking one does not waive our right to take another. Nothing in this Section limits the Creators’ or our rights under applicable copyright and intellectual property law.</p>
+<p><strong>7.4 Survival.</strong> Purchased Routes remain accessible for as long as your account is active and the Route remains lawfully available on the Service. If a Route must be removed for legal or safety reasons, we will use reasonable efforts to notify affected purchasers and, where appropriate, offer a remedy under Section 6.2.</p>
+<h2>8. Safety &amp; Assumption of Risk</h2>
+<p><strong>Please read this section carefully. It affects your legal rights.</strong></p>
+<p><strong>8.1 Walking a city carries inherent risks.</strong> Urban walking involves risks that no app can eliminate, including but not limited to: traffic; uneven, wet, or damaged surfaces; construction; crowds; crime; adverse weather; poor lighting; and areas whose character changes with time of day. To the maximum extent permitted by applicable law, you voluntarily assume all risks arising from your Walks and your use of the Service in the physical world.</p>
+<p><strong>8.2 You are responsible for your own judgment.</strong> A Route is a suggestion, not an instruction. You must at all times:</p>
+<ul>
+<li>(a) remain aware of your surroundings and prioritise your safety over following the Route;</li>
+<li>(b) comply with all local laws, traffic rules, signals, and signage;</li>
+<li>(c) assess for yourself whether any street, area, Stop, or condition is safe and suitable for you, including at the specific time of day of your Walk;</li>
+<li>(d) not use the app in a manner that distracts you from traffic or hazards (do not read while crossing streets);</li>
+<li>(e) leave the Route or end the Walk whenever conditions feel unsafe.</li>
+</ul>
+<p><strong>8.3 A Route may become temporarily impassable.</strong> Part of a Route may, at the time of your Walk, be temporarily unusable for reasons unrelated to the accuracy of its Content — for example, a street or square closed for an event, roadworks, a building undergoing maintenance, or a police cordon or other emergency. If a direction cannot be followed for this reason, choose a safe alternative or end your Walk; we accept no liability for a Route being temporarily impassable in this way. If you find that part of a Route can no longer be followed on a lasting basis, we would appreciate you reporting it under Section 11.</p>
+<p><strong>8.4 Content can go out of date.</strong> Separately from temporary obstructions, the information in a Route reflects a point in time and can become outdated in ways that have nothing to do with access — for example, a shop has closed down, a restaurant has changed name or owner, a museum has moved, or opening hours have changed. We and our Creators make no representation that Stops remain open or that details such as hours, prices, or contact information remain correct. GPS positioning is inherently imprecise, particularly in dense urban environments, and navigation prompts (including haptic signals) may be inaccurate, delayed, or unavailable.</p>
+<p><strong>8.5 Private property and restricted areas.</strong> You agree not to trespass on, or attempt to access, any private property or restricted area in connection with a Walk. We do not and cannot verify the access status of every location referenced in a Route, and we disclaim any obligation to provide complete or accurate information about private property. Obtaining any required permission to enter a location is solely your responsibility. Be respectful of the places you visit and the people who live there. Maintenance and safety of public and private infrastructure — including streets, stairs, bridges, buildings, and street furniture — is the responsibility of the relevant owner or authority, not Localogs; we accept no liability arising from the condition of such infrastructure.</p>
+<p><strong>8.6 Physical condition.</strong> You are responsible for assessing whether a Walk’s length, terrain, and conditions are suitable for your health and fitness.</p>
+<p><strong>8.7 Emergencies.</strong> The Service is not an emergency service. In an emergency, contact local emergency services (e.g. 112 in the Netherlands and the EU, 110/119 in Japan, 999 in Hong Kong).</p>
+<p><strong>8.8 Safety Acknowledgment.</strong> Before starting your first Walk, you will be asked to confirm a short safety acknowledgment covering the substance of this Section 8. That acknowledgment forms part of your agreement with us.</p>
+<h2>9. Your Conduct</h2>
+<p>You agree not to:</p>
+<ul>
+<li>(a) use the Service for any unlawful purpose or in violation of any local law of the city you are walking in;</li>
+<li>(b) harass, stalk, threaten, or harm any Creator, resident, business, or other person, whether through the Service or during a Walk;</li>
+<li>(c) interfere with or disrupt the Service, its servers, or its security features;</li>
+<li>(d) misrepresent your identity or affiliation;</li>
+<li>(e) use the Service to promote a competing service or for unauthorised commercial purposes.</li>
+</ul>
+<h2>10. Your Content (Reviews)</h2>
+<p><strong>10.1 Licence to us.</strong> You may post reviews and related content after completing a Walk (“Your Content”). You retain ownership of Your Content. By posting, you grant us a worldwide, non-exclusive, royalty-free, sublicensable licence to host, use, reproduce, display, translate, and distribute Your Content in connection with operating and promoting the Service.</p>
+<p><strong>10.2 Rules.</strong> Your Content must comply with our Content Policy. It must be based on your genuine experience, must not be defamatory, discriminatory, or unlawful, must not disclose others’ personal data, and must not be posted in exchange for undisclosed compensation.</p>
+<p><strong>10.3 Our rights.</strong> We may remove or refuse to display Your Content that violates these Terms or our Content Policy, or where required by law. We do not guarantee that any review or other user content will be published, remain published, or receive any particular visibility.</p>
+<h2>11. Reporting Content</h2>
+<p><strong>11.1 Reporting mechanism.</strong> If you believe any Content on the Service is illegal or violates our Content Policy — including Routes that direct users to unsafe or unlawful locations — you can report it through the in-app reporting function on each Route and review, or by contacting <a href="mailto:info@localogs.com">info@localogs.com</a>. Reports should identify the Content, its location in the Service, and the reason you believe it is illegal or non-compliant.</p>
+<p><strong>11.2 How we handle reports.</strong> We process reports in a timely, diligent, non-arbitrary, and objective manner. We will confirm receipt, inform you of our decision, and explain the reasons for it, as required by applicable law (including, in the EU, Regulation (EU) 2022/2065 — the Digital Services Act). We may remove or disable access to Content, request changes from the Creator, or take other appropriate action.</p>
+<p><strong>11.3 Content moderation.</strong> We may restrict, remove or disable access to Content where we reasonably consider that it is illegal, violates these Terms or the Content Policy, creates a safety risk, or is otherwise subject to a lawful restriction.</p>
+<p><strong>11.4 Statement of reasons.</strong> Where required by applicable law, we will provide affected users with a clear and specific explanation of the reasons for a moderation decision, together with information on how to challenge it.</p>
+<p><strong>11.5 No monitoring obligation.</strong> We have the right, but not the obligation, to monitor Content on the Service. Our review of Routes before publication does not constitute ongoing monitoring of their accuracy or safety.</p>
+<h2>12. Privacy &amp; Location Data</h2>
+<p>Our <a href="privacy.html">Privacy Policy</a> explains what personal data we collect and why — including how the Service uses your device’s location to provide GPS navigation, arrival detection, and Walk progress features, and how we handle analytics data. Location processing occurs only with the permissions you grant through your device settings; disabling location services will limit core functionality of the Service. Where you are located in Japan or another jurisdiction whose law restricts cross-border data transfers, the Privacy Policy sets out the information and safeguards required for transfers of your data to our servers abroad.</p>
+<h2>13. Intellectual Property</h2>
+<p><strong>13.1 Our IP.</strong> The Service, including its software, design, branding, and all Content other than Creator content and user content, is owned by Localogs or its licensors and is protected by intellectual property laws. These Terms grant you no rights in our trademarks or branding.</p>
+<p><strong>13.2 Creator content.</strong> Routes and their content are created by Creators and licensed to Localogs for sale and distribution through the Service. Your rights in purchased Routes are limited to the licence in Section 7.</p>
+<p><strong>13.3 Feedback.</strong> If you send us feedback or suggestions, you grant us a perpetual, worldwide, irrevocable, royalty-free licence to use, reproduce, modify and incorporate such feedback into the Service without compensation or obligation to you.</p>
+<h2>14. Disclaimers</h2>
+<p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICE AND ALL CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT: (A) CONTENT (INCLUDING ROUTE DESCRIPTIONS, STOP INFORMATION, AND MAPS) IS ACCURATE, COMPLETE, CURRENT, OR SAFE TO RELY UPON; (B) THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, INCLUDING DURING A WALK; OR (C) GPS OR NAVIGATION FEATURES WILL BE ACCURATE OR RELIABLE.</p>
+<p>THIS SECTION DOES NOT EXCLUDE OR LIMIT ANY WARRANTY OR GUARANTEE THAT CANNOT BE EXCLUDED UNDER THE MANDATORY LAW OF YOUR COUNTRY OF RESIDENCE, INCLUDING THE EU STATUTORY CONFORMITY GUARANTEE FOR DIGITAL CONTENT.</p>
+<h2>15. Limitation of Liability</h2>
+<p><strong>15.1 What we do not exclude.</strong> Nothing in these Terms excludes or limits our liability for: (a) death or personal injury caused by our negligence or the negligence of our employees or agents; (b) fraud or fraudulent misrepresentation; (c) intent or gross negligence; or (d) any other liability that cannot be excluded or limited under applicable law.</p>
+<p><strong>15.2 Exclusion of certain losses.</strong> Subject to Section 15.1, and to the maximum extent permitted by applicable law, we are not liable for: (a) indirect or consequential losses; (b) loss of enjoyment, missed travel plans, or wasted expenditure; (c) losses arising from events during a Walk, including injury, property damage, or crime, except to the extent caused by our own breach of these Terms or negligence; (d) losses arising from inaccurate, outdated, or incomplete Creator content, except to the extent such liability cannot lawfully be excluded (including our liability under Section 6.3 and Annex A for the conformity of the digital content we supply to you); or (e) losses caused by events outside our reasonable control.</p>
+<p><strong>15.3 Cap.</strong> Subject to Sections 15.1 and 15.2, our total aggregate liability to you arising out of or in connection with these Terms and your use of the Service is limited to the greater of: (a) the total amount you paid us for purchases in the 12 months preceding the event giving rise to the liability; and (b) EUR 100.</p>
+<p><strong>15.4 EU/EEA consumers.</strong> If you are a consumer in the EU/EEA, Section 15 applies only to the extent permitted by the mandatory law of your country of residence; the liability rules in Annex A prevail over this Section to the extent of any conflict.</p>
+<h2>16. Indemnification</h2>
+<p>To the maximum extent permitted by applicable law, you agree to indemnify and hold Localogs harmless from claims, damages, and reasonable costs (including legal fees) brought by a third party arising out of: (a) your breach of these Terms; (b) your violation of law or third-party rights during a Walk, including trespass; or (c) Your Content. This Section does not apply to consumers to the extent prohibited by the mandatory law of their country of residence.</p>
+<h2>17. Suspension, Termination &amp; Account Deletion</h2>
+<p><strong>17.1 By you.</strong> You may stop using the Service at any time. You may delete your account directly in the app under Account → Settings → Delete Account or by contacting <a href="mailto:info@localogs.com">info@localogs.com</a>. Deletion permanently removes access to your purchased Routes; no refund is due for purchases already made, except as required by law. When you delete your account, reviews you wrote and private messages you sent to Creators are deleted. We retain a blocked account record and purchase and payment records only as needed for accounting, tax, legal and dispute purposes, as described in our <a href="privacy.html">Privacy Policy</a>.</p>
+<p><strong>17.2 By us.</strong> We may suspend or terminate your account, or restrict access to the Service, if: (a) you materially or repeatedly breach these Terms or the Content Policy; (b) we are required to do so by law; or (c) we discontinue the Service. Except in urgent cases (safety, fraud, legal requirement), we will give you reasonable prior notice and an opportunity to respond. If we terminate without cause or discontinue the Service, we will provide a pro-rata or other appropriate remedy for recent purchases where required by applicable law.</p>
+<p><strong>17.3 Survival.</strong> Sections that by their nature should survive termination (including 7.2, 8, 10.1, 13–16, 19) survive.</p>
+<h2>18. Changes to These Terms</h2>
+<p>We may update these Terms from time to time, for example to reflect changes in law, new features, or new regions. For material changes, we will notify you at least 30 days in advance through the app or by email, and the change will apply only after that notice period. If you do not agree to a material change, you may delete your account before it takes effect. Changes do not apply retroactively to purchases completed before the change, unless the change is required by law or relates to security, fraud prevention, or technical changes necessary to operate the Service.</p>
+<h2>19. Governing Law &amp; Disputes</h2>
+<p><strong>19.1 Governing law.</strong> These Terms are governed by the laws of the Netherlands, excluding its conflict-of-law rules. This choice of law does not deprive you of the protection of mandatory consumer protection provisions of the law of your country of habitual residence.</p>
+<p><strong>19.2 Where disputes are heard.</strong> Disputes will be submitted to the competent court in [Amsterdam], the Netherlands. If you are a consumer residing in the EU/EEA, you may also bring proceedings in the courts of your country of residence, and proceedings against you may only be brought there.</p>
+<p><strong>19.3 Alternative dispute resolution.</strong> Where required or available under applicable law, you may use an approved alternative dispute resolution body to resolve a consumer dispute. Nothing in these Terms prevents you from exercising any rights available to you under applicable law.</p>
+<p><strong>19.4 Talk to us first.</strong> Before formal proceedings, please contact us at <a href="mailto:info@localogs.com">info@localogs.com</a> — most issues can be resolved quickly and informally.</p>
+<h2>20. General</h2>
+<p><strong>20.1 Entire agreement.</strong> These Terms, together with the documents referenced in Section 1, are the entire agreement between you and us regarding the Service.</p>
+<p><strong>20.2 Severability.</strong> If any provision is found invalid or unenforceable, the remaining provisions remain in effect, and the invalid provision will be replaced by a valid one that best reflects its intent.</p>
+<p><strong>20.3 No waiver.</strong> Our failure to enforce a provision is not a waiver of it.</p>
+<p><strong>20.4 Assignment.</strong> You may not assign these Terms. We may assign them in connection with a merger, acquisition, or sale of assets, with notice to you.</p>
+<p><strong>20.5 Contact.</strong> Localogs, <a href="mailto:info@localogs.com">info@localogs.com</a>.</p>
+<h2>Annex — Regional Terms</h2>
+<h3>Annex A — European Union / EEA</h3>
+<p><strong>A.1 Right of withdrawal (digital content).</strong> As a consumer, you have the right to withdraw from a distance contract within 14 days without giving any reason. For Routes (digital content not supplied on a tangible medium), this right expires once we begin supplying the Route, provided that you have given your prior express consent to immediate supply and acknowledged that you thereby lose your right of withdrawal. Our checkout requires this consent and acknowledgment before the purchase completes. If you complete a purchase without such consent being validly obtained, you may withdraw within 14 days by an unequivocal statement to <a href="mailto:info@localogs.com">info@localogs.com</a> (you may use the model withdrawal form below), and we will reimburse you without undue delay and no later than 14 days after being informed, using the same means of payment you used.</p>
+<p><strong>Model withdrawal form:</strong> To Localogs, <a href="mailto:info@localogs.com">info@localogs.com</a>: I hereby give notice that I withdraw from my contract for the supply of the following digital content: [Route name, purchase date]. Name, address, date, signature (only if on paper).</p>
+<p><strong>A.2 Conformity of digital content.</strong> EU law provides a statutory guarantee that digital content conforms to the contract. If a Route does not conform (for example, it materially fails to match its description), you have statutory remedies — including bringing the content into conformity, a proportionate price reduction, or termination of the contract — independent of our discretionary policy in Section 6.2.</p>
+<p><strong>A.3 Liability.</strong> Notwithstanding Section 15, we are liable in accordance with statutory provisions for intent and gross negligence, for culpable injury to life, body, or health, and under any mandatory liability law. For slightly negligent breaches of essential contractual obligations (obligations whose fulfilment enables the proper performance of the contract and on which you may reasonably rely), our liability is limited to the foreseeable damage typical for this type of contract.</p>
+<p><strong>A.4 Illegal content reports.</strong> Section 11 implements our obligations under Regulation (EU) 2022/2065 (Digital Services Act), including our notice-and-action mechanism and statements of reasons.</p>
+<h3>Annex B — Japan</h3>
+<p><strong>B.1 Consumer Contract Act.</strong> If you are a consumer residing in Japan, nothing in these Terms: (a) fully exempts us from liability for damages caused by our default or tort; (b) partially exempts us from liability for damages caused by our intentional act or gross negligence; or (c) otherwise applies to the extent a provision would be void under the Consumer Contract Act (Act No. 61 of 2000) or other mandatory Japanese law. Any provision of these Terms found void under such law is limited or replaced to the minimum extent necessary.</p>
+<p><strong>B.2 Personal information.</strong> Our handling of your personal information complies with the Act on the Protection of Personal Information (APPI). Details of the purposes of use and cross-border transfer safeguards are set out in our <a href="privacy.html">Privacy Policy</a>.</p>
+<p><strong>B.3 No tour guide service.</strong> For clarity, Localogs provides self-guided digital content only and does not provide guide-interpreter or travel agency services within the meaning of applicable Japanese law.</p>
+<h3>Annex C — Hong Kong</h3>
+<p><strong>C.1 Liability.</strong> If you are a consumer residing in Hong Kong, nothing in these Terms excludes or restricts our liability for death or personal injury resulting from our negligence, and any other exclusion or restriction of liability applies only to the extent it satisfies the reasonableness requirement under the Control of Exemption Clauses Ordinance (Cap. 71). Nothing in these Terms excludes any term implied by the Supply of Services (Implied Terms) Ordinance (Cap. 457) where such exclusion is not permitted.</p>
+<p><strong>C.2 Personal data.</strong> Our handling of your personal data complies with the Personal Data (Privacy) Ordinance (Cap. 486). See our <a href="privacy.html">Privacy Policy</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <span>© 2026 Localogs</span>
+  <span class="legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></span>
+</footer>
+</body>
+</html>
